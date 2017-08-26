@@ -28,7 +28,7 @@ public class UserServiceImpl implements UserService {
 
     }
 
-    public void deleteUser(User user) throws UserPersistException {
+    public void deleteUser(long id) throws UserPersistException {
 
     }
 
