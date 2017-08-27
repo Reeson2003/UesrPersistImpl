@@ -14,6 +14,7 @@ import ru.reeson2003.persist_user.api.domain.User;
 import ru.reeson2003.persist_user.api.service.UserService;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Date: 26.08.2017.
@@ -64,9 +65,11 @@ public abstract class AbstractTest extends Assert {
     @After
     public void clearDataBase() {
         try {
-            userService.deleteUser(ID);
-            userService.deleteUser(ID_2);
-        } catch (UserPersistException e) {
+            List<User> users = userService.getUsers();
+            for (User u : users)
+                userService.deleteUser(u.getId());
+        } catch (Exception e) {
+            /*do nothing*/
         }
     }
 

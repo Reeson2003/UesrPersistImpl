@@ -18,8 +18,23 @@ public class PersistedUser extends User {
         super();
     }
 
+    public PersistedUser(User user) {
+        this.setId(user.getId());
+        this.setFirstName(user.getFirstName());
+        this.setMiddleName(user.getMiddleName());
+        this.setLastName(user.getLastName());
+        this.setBirthDate(user.getBirthDate());
+        this.setEmail(user.getEmail());
+        this.setLogin(user.getLogin());
+        this.setPassword(user.getPassword());
+        this.setRegisterDate(user.getRegisterDate());
+        this.setUpdateDate(user.getUpdateDate());
+        this.setLoggedIn(user.isLoggedIn());
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     @Override
     public long getId() {
         return super.getId();

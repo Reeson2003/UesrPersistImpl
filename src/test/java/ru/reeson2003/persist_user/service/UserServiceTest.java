@@ -193,4 +193,17 @@ public class UserServiceTest extends AbstractTest {
         LOGGER.info("GetUserListTest ...PASS");
     }
 
+    private void assertEquals(User u1, User u2) {
+        if (u1.getId() != u2.getId() ||
+                !u1.getFirstName().equals(u2.getFirstName()) ||
+                !u1.getMiddleName().equals(u2.getMiddleName()) ||
+                !u1.getLastName().equals(u2.getLastName()) ||
+                !u1.getLogin().equals(u2.getLogin()) ||
+                !u1.getPassword().equals(u2.getPassword()) ||
+                !u1.getEmail().equals(u2.getEmail()) ||
+                u1.isLoggedIn() != u2.isLoggedIn()
+                )
+            fail("Users is not equals");
+    }
+
 }
