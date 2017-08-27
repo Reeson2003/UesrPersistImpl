@@ -14,7 +14,7 @@ import java.util.List;
  *
  * @author Pavel Gavrilov.
  */
-@Service
+//@Service
 public class UserServiceImpl implements UserService {
     public void addUser(User user) throws UserPersistException {
 
@@ -40,7 +40,7 @@ public class UserServiceImpl implements UserService {
         return null;
     }
 
-    public UserQuery createUserQery() {
+    public UserQuery createUserQuery() {
         return null;
     }
 }

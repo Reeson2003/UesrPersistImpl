@@ -80,7 +80,8 @@ public class UserServiceTest extends AbstractTest {
         try {
             persistedUser = getUserService().getUser(id);
         } catch (UserPersistException e) {
-            fail("User has not been got");
+            assertNotNull(e);
+            persistedUser = null;
         }
         assertNull(persistedUser);
         LOGGER.info("DeleteUserTest ...PASS");
